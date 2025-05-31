@@ -12,17 +12,21 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  final authRepository = FirebaseAuthRepository();
+  // Create a single instance of FirebaseAuthRepository to share between cubits
+  final firebaseAuthRepository = FirebaseAuthRepository();
+
   runApp(
-    MultiRepositoryProvider(
-      providers: [RepositoryProvider.value(value: authRepository)],
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (_) => PhoneAuthCubit(authRepository)),
-          BlocProvider(create: (_) => UserCubit()),
-        ],
-        child: const MyApp(),
-      ),
+    MultiBlocProvider(
+      providers: [
+        // 1) UserCubit listens directly to FirebaseAuth (no repository here).
+        BlocProvider<UserCubit>(create: (context) => UserCubit()),
+
+        // 2) PhoneAuthCubit needs an AuthRepository (FirebaseAuthRepository).
+        BlocProvider<PhoneAuthCubit>(
+          create: (context) => PhoneAuthCubit(firebaseAuthRepository),
+        ),
+      ],
+      child: const MyApp(),
     ),
   );
 }
