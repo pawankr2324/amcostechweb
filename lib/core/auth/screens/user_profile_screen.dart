@@ -1,5 +1,7 @@
 // File: lib/core/auth/user_profile_screen.dart
 
+import 'package:amcostechweb/core/utils/theme/app_colors.dart';
+import 'package:amcostechweb/core/utils/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:authentication/logic/user_cubit/user_cubit.dart';
@@ -22,8 +24,8 @@ class UserProfileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile', style: AppTheme.textStyles.titleLarge),
-        backgroundColor: AppTheme.colors.primary,
+        title: Text('Profile', style: AppTextStyles().titleLarge),
+        backgroundColor: AppColors().primary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

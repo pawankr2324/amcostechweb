@@ -1,3 +1,4 @@
+import 'package:amcostechweb/core/auth/widgets/otp_card.dart';
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,35 +14,12 @@ class OTPScreen extends StatelessWidget {
     final smsController = TextEditingController();
     final verificationId = ModalRoute.of(context)!.settings.arguments as String;
 
-    Widget content = Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        TextField(
-          controller: smsController,
-          decoration: const InputDecoration(labelText: 'OTP'),
-          keyboardType: TextInputType.number,
-        ),
-        const SizedBox(height: 16),
-        BlocBuilder<PhoneAuthCubit, PhoneAuthState>(
-          builder: (context, state) {
-            if (state is PhoneAuthLoading) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            return ElevatedButton(
-              onPressed:
-                  () => context.read<PhoneAuthCubit>().submitOTP(
-                    verificationId,
-                    smsController.text.trim(),
-                  ),
-              child: const Text('Verify'),
-            );
-          },
-        ),
-      ],
+    Widget content = OTPCard(
+      smsController: smsController,
+      verificationId: verificationId,
     );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Enter OTP')),
       body: ResponsiveLayout(
         mobile: Padding(
           padding: const EdgeInsets.all(16),
