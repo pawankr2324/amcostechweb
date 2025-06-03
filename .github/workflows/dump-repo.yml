@@ -1,0 +1,46 @@
+# .github/workflows/dump-repo.yml
+name: Dump lib/ and packages/ structure and contents
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - "repo_structure.json"
+      - "file_contents.json"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Install 'tree' utility
+        run: sudo apt-get update && sudo apt-get install -y tree
+
+      - name: Generate repo_structure.json for lib/ and packages/
+        run: |
+          # Output folder/file tree under lib/ and packages/ as JSON
+          tree -J -a --noreport lib/ packages/ > repo_structure.json
+
+      - name: Generate file_contents.json for lib/ and packages/
+        run: |
+          echo "{" > file_contents.json
+          find lib/ packages/ \
+            -type f \
+            \( -iname "*.dart" -o -iname "*.yaml" -o -iname "*.json" -o -iname "*.md" -o -iname "*.txt" -o -iname "*.xml" \) \
+            | while read -r filepath; do
+              b64=$(base64 -w0 "$filepath")
+              safepath=$(printf '%s' "$filepath" | sed 's/\\/\\\\/g; s/"/\\"/g')
+              echo "  \"${safepath}\": \"${b64}\"," >> file_contents.json
+            done
+          sed -i '$ s/,$//' file_contents.json
+          echo "}" >> file_contents.json
+
+      - name: Commit & push generated JSON files (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add repo_structure.json file_contents.json
+          git diff --cached --quiet || (git commit -m "chore: update repo_structure.json & file_contents.json" && git push)
