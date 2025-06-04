@@ -12,6 +12,8 @@ environment:
 dependencies:
   authentication:
     path: packages/authentication
+  userdata:
+    path: packages/userdata
   cupertino_icons: ^1.0.8
   firebase_auth: ^5.5.4
   firebase_core: ^3.13.1
