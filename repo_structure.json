@@ -15,7 +15,7 @@
       {"type":"file","name":"my_app.dart"},
       {"type":"directory","name":"pages","contents":[
         {"type":"file","name":"home_page.dart"},
-        {"type":"file","name":"user_profile.dart"}
+        {"type":"file","name":"user_profile_page.dart"}
       ]},
       {"type":"directory","name":"router","contents":[
         {"type":"file","name":"app_router.dart"},
@@ -39,7 +39,7 @@
         ]}
       ]},
       {"type":"directory","name":"widgets","contents":[
-        {"type":"file","name":"custom_app_bar.dart"},
+        {"type":"file","name":"app_navbar.dart"},
         {"type":"file","name":"custom_text_field.dart"}
       ]}
     ]},
@@ -74,6 +74,32 @@
       {"type":"file","name":"pubspec.yaml"},
       {"type":"directory","name":"test","contents":[
         {"type":"file","name":"authentication_test.dart"}
+      ]}
+    ]},
+    {"type":"directory","name":"userdata","contents":[
+      {"type":"file","name":".gitignore"},
+      {"type":"file","name":".metadata"},
+      {"type":"file","name":"CHANGELOG.md"},
+      {"type":"file","name":"LICENSE"},
+      {"type":"file","name":"README.md"},
+      {"type":"file","name":"analysis_options.yaml"},
+      {"type":"directory","name":"lib","contents":[
+        {"type":"directory","name":"logic","contents":[
+          {"type":"file","name":"userdata_cubit.dart"},
+          {"type":"file","name":"userdata_state.dart"}
+        ]},
+        {"type":"directory","name":"models","contents":[
+          {"type":"file","name":"userdata_model.dart"},
+          {"type":"file","name":"userdata_model_converter.dart"}
+        ]},
+        {"type":"directory","name":"repositories","contents":[
+          {"type":"file","name":"userdata_repository.dart"}
+        ]},
+        {"type":"file","name":"userdata.dart"}
+      ]},
+      {"type":"file","name":"pubspec.yaml"},
+      {"type":"directory","name":"test","contents":[
+        {"type":"file","name":"userdata_test.dart"}
       ]}
     ]}
   ]}
