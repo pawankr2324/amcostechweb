@@ -85,7 +85,6 @@
       {"type":"file","name":"analysis_options.yaml"},
       {"type":"directory","name":"lib","contents":[
         {"type":"directory","name":"logic","contents":[
-          {"type":"file","name":"new.dart"},
           {"type":"file","name":"userdata_cubit.dart"},
           {"type":"file","name":"userdata_state.dart"}
         ]},
