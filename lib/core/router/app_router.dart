@@ -8,8 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:amcostechweb/core/auth/screens/otp_screen.dart';
 import 'package:amcostechweb/core/pages/home_page.dart';
-import 'package:authentication/logic/user_cubit/user_cubit.dart';
-import 'package:authentication/logic/user_cubit/user_state.dart';
+import 'package:authentication/authentication.dart';
 
 /// ─────────────────────────────────────────────────────────────────────────────
 /// 1) Route‐name constants. Add new screens here as needed.

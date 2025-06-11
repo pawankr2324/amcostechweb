@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:amcostechweb/core/utils/theme/app_theme.dart';
 
-import 'package:authentication/logic/user_cubit/user_cubit.dart';
+import 'package:authentication/authentication.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

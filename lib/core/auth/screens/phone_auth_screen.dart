@@ -6,8 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:amcostechweb/core/auth/widgets/phone_auth_card.dart';
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
-import 'package:authentication/logic/auth_cubit/phone_auth_cubit.dart';
-import 'package:authentication/logic/auth_cubit/phone_auth_state.dart';
+import 'package:authentication/authentication.dart';
 import 'package:amcostechweb/core/router/app_router.dart';
 
 /// Phone authentication screen, responsive via ResponsiveLayout.
@@ -37,13 +36,11 @@ class PhoneAuthScreen extends StatelessWidget {
       child: ResponsiveLayout(
         // ▶ MOBILE layout
         mobile: Scaffold(
-          appBar: AppBar(title: const Text('Phone Authentication')),
           body: Center(child: PhoneAuthCard(phoneController: phoneController)),
         ),
 
         // ▶ DESKTOP layout: constrain width to 600px
         desktop: Scaffold(
-          appBar: AppBar(title: const Text('Phone Authentication')),
           body: Center(
             child: SizedBox(
               width: 600,
@@ -57,7 +54,6 @@ class PhoneAuthScreen extends StatelessWidget {
 
         // ▶ TABLET layout: center in a 400px‐wide box
         tablet: Scaffold(
-          appBar: AppBar(title: const Text('Phone Authentication')),
           body: Center(
             child: SizedBox(
               width: 400,

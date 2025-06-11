@@ -1,12 +1,9 @@
-// File: lib/core/pages/home.dart
-
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
 import 'package:amcostechweb/core/utils/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:authentication/logic/user_cubit/user_cubit.dart';
-import 'package:authentication/logic/user_cubit/user_state.dart';
 import 'package:amcostechweb/core/utils/theme/app_theme.dart';
+import 'package:authentication/authentication.dart';
 
 /// The main landing page after a successful login.
 ///

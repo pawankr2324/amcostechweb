@@ -4,8 +4,7 @@ import 'package:amcostechweb/core/utils/theme/app_colors.dart';
 import 'package:amcostechweb/core/utils/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:authentication/logic/user_cubit/user_cubit.dart';
-import 'package:authentication/logic/user_cubit/user_state.dart';
+import 'package:authentication/authentication.dart';
 import 'package:amcostechweb/core/utils/theme/app_theme.dart';
 
 class UserProfileScreen extends StatelessWidget {

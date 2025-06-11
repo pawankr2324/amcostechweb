@@ -1,12 +1,9 @@
-// File: lib/core/presentation/widgets/phone_auth_card.dart
-
 import 'package:amcostechweb/core/utils/constants/assets_image.dart';
 
 import 'package:amcostechweb/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:authentication/logic/auth_cubit/phone_auth_cubit.dart';
-import 'package:authentication/logic/auth_cubit/phone_auth_state.dart';
+import 'package:authentication/authentication.dart';
 // Adjust path if needed
 
 /// A card‐styled widget for phone authentication (sending OTP).

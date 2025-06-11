@@ -3,8 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:authentication/logic/auth_cubit/phone_auth_cubit.dart';
-import 'package:authentication/logic/auth_cubit/phone_auth_state.dart';
+import 'package:authentication/authentication.dart';
 import 'package:amcostechweb/core/auth/widgets/otp_card.dart';
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
 
@@ -23,7 +22,6 @@ class OTPScreen extends StatelessWidget {
     return ResponsiveLayout(
       // ▶ MOBILE layout
       mobile: Scaffold(
-        appBar: AppBar(title: const Text('Enter OTP')),
         body: BlocConsumer<PhoneAuthCubit, PhoneAuthState>(
           listener: (context, state) {
             if (state is PhoneAuthFailure) {
@@ -50,7 +48,6 @@ class OTPScreen extends StatelessWidget {
 
       // ▶ TABLET layout
       tablet: Scaffold(
-        appBar: AppBar(title: const Text('Enter OTP')),
         body: Center(
           child: SizedBox(
             width: 400,
@@ -75,7 +72,6 @@ class OTPScreen extends StatelessWidget {
 
       // ▶ DESKTOP layout
       desktop: Scaffold(
-        appBar: AppBar(title: const Text('Enter OTP')),
         body: Center(
           child: SizedBox(
             width: 600,

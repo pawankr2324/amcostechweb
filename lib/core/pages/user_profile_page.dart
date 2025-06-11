@@ -1,10 +1,7 @@
-// File: lib/core/presentation/pages/user_profile_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:userdata/logic/userdata_cubit.dart';
-import 'package:userdata/models/userdata_model.dart';
+import 'package:userdata/userdata.dart';
 
 class UserProfilePage extends StatefulWidget {
   const UserProfilePage({super.key});

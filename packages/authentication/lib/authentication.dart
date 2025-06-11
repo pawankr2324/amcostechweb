@@ -1,7 +1,7 @@
 // The entrypoint for the authentication package.
 // Exposes the public APIs: cubits and repository interfaces/implementations.
 
-//library authentication;
+library;
 
 // Cubits & states: handles authentication and user state logic.
 export 'logic/auth_cubit/phone_auth_cubit.dart';
