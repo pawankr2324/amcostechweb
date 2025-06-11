@@ -13,3 +13,4 @@ export 'repositories/userdata_repository.dart';
 
 export 'models/userdata_model.dart';
 export 'models/userdata_model_converter.dart';
+export 'local/local_userdata_source.dart';

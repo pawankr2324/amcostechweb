@@ -1,6 +1,10 @@
+// File: lib/core/router/auth_wrapper.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:authentication/authentication.dart';
+import 'package:userdata/userdata.dart'; // ← userdata export
 import 'package:amcostechweb/core/pages/home_page.dart';
 import 'package:amcostechweb/core/auth/screens/phone_auth_screen.dart';
 
@@ -9,13 +13,20 @@ class AuthWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserCubit, UserState>(
-      builder: (context, state) {
-        if (state is UserLoaded) {
-          // If user is authenticated, go to HomePage
+    return BlocConsumer<UserCubit, UserState>(
+      listener: (context, authState) {
+        if (authState is UserLoaded) {
+          // start caching + streaming profile data
+          final uid = authState.user.uid;
+          context.read<UserdataCubit>().subscribeToUserdata(uid);
+        }
+      },
+      builder: (context, authState) {
+        if (authState is UserLoaded) {
+          // user is signed in
           return const HomePage();
         }
-        // Otherwise show PhoneAuthScreen
+        // not signed in yet
         return const PhoneAuthScreen();
       },
     );
