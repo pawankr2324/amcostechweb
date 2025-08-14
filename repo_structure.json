@@ -1,21 +1,26 @@
 [
   {"type":"directory","name":"lib/","contents":[
     {"type":"directory","name":"core","contents":[
-      {"type":"directory","name":"auth","contents":[
-        {"type":"directory","name":"screens","contents":[
-          {"type":"file","name":"otp_screen.dart"},
-          {"type":"file","name":"phone_auth_screen.dart"},
-          {"type":"file","name":"user_profile_screen.dart"}
-        ]},
-        {"type":"directory","name":"widgets","contents":[
-          {"type":"file","name":"otp_card.dart"},
-          {"type":"file","name":"phone_auth_card.dart"}
-        ]}
-      ]},
       {"type":"file","name":"my_app.dart"},
       {"type":"directory","name":"pages","contents":[
-        {"type":"file","name":"home_page.dart"},
         {"type":"file","name":"user_profile_page.dart"}
+      ]},
+      {"type":"directory","name":"presentation","contents":[
+        {"type":"directory","name":"auth","contents":[
+          {"type":"directory","name":"screens","contents":[
+            {"type":"file","name":"otp_screen.dart"},
+            {"type":"file","name":"phone_auth_screen.dart"},
+            {"type":"file","name":"user_profile_screen.dart"}
+          ]},
+          {"type":"directory","name":"widgets","contents":[
+            {"type":"file","name":"otp_card.dart"},
+            {"type":"file","name":"otp_form.dart"},
+            {"type":"file","name":"phone_auth_card.dart"}
+          ]}
+        ]},
+        {"type":"directory","name":"home","contents":[
+          {"type":"file","name":"home_page.dart"}
+        ]}
       ]},
       {"type":"directory","name":"router","contents":[
         {"type":"file","name":"app_router.dart"},
@@ -40,7 +45,28 @@
       ]},
       {"type":"directory","name":"widgets","contents":[
         {"type":"file","name":"app_navbar.dart"},
-        {"type":"file","name":"custom_text_field.dart"}
+        {"type":"file","name":"app_side_drawer.dart"},
+        {"type":"file","name":"custom_text_field.dart"},
+        {"type":"directory","name":"sideNavbar","contents":[
+          {"type":"directory","name":"components","contents":[
+            {"type":"file","name":"side_nav_container.dart"},
+            {"type":"file","name":"side_nav_expandable_item.dart"},
+            {"type":"file","name":"side_nav_footer.dart"},
+            {"type":"file","name":"side_nav_header.dart"},
+            {"type":"file","name":"side_nav_menu_item.dart"},
+            {"type":"file","name":"side_nav_section_list.dart"},
+            {"type":"file","name":"side_nav_subitem_tile.dart"}
+          ]},
+          {"type":"directory","name":"cubit","contents":[
+            {"type":"file","name":"side_nav_cubit.dart"}
+          ]},
+          {"type":"directory","name":"data","contents":[
+            {"type":"file","name":"side_nav_item_model.dart"},
+            {"type":"file","name":"side_nav_items.dart"}
+          ]},
+          {"type":"file","name":"side_nav_style.dart"},
+          {"type":"file","name":"side_navbar.dart"}
+        ]}
       ]}
     ]},
     {"type":"file","name":"firebase_options.dart"},
