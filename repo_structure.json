@@ -84,6 +84,9 @@
       {"type":"file","name":"README.md"},
       {"type":"file","name":"analysis_options.yaml"},
       {"type":"directory","name":"lib","contents":[
+        {"type":"directory","name":"local","contents":[
+          {"type":"file","name":"local_userdata_source.dart"}
+        ]},
         {"type":"directory","name":"logic","contents":[
           {"type":"file","name":"userdata_cubit.dart"},
           {"type":"file","name":"userdata_state.dart"}
