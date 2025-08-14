@@ -10,37 +10,38 @@ class LocalUserDataSource {
   static const _cacheKey = 'cached_user';
 
   /// Save the entire [UserdataModel] as JSON.
-  Future<void> cacheUserData(UserdataModel u) async {
+  Future<void> cacheUserData(UserdataModel user) async {
     final prefs = await SharedPreferences.getInstance();
 
     // Build a pure‐Dart map, matching your constructor exactly:
     final jsonMap = <String, dynamic>{
-      'uid': u.uid,
-      'firstName': u.firstName,
-      'lastName': u.lastName,
-      'email': u.email,
-      'phoneNumber': u.phoneNumber,
-      'designation': u.designation,
-      'role': u.role,
-      if (u.photoURL != null) 'photoURL': u.photoURL,
-      if (u.createdAt != null) 'createdAt': u.createdAt!.toIso8601String(),
-      if (u.lastUpdated != null)
-        'lastUpdated': u.lastUpdated!.toIso8601String(),
-      if (u.bio != null) 'bio': u.bio,
+      'uid': user.uid,
+      'firstName': user.firstName,
+      'lastName': user.lastName,
+      'email': user.email,
+      'phoneNumber': user.phoneNumber,
+      'designation': user.designation,
+      'role': user.role,
+      if (user.photoURL != null) 'photoURL': user.photoURL,
+      if (user.createdAt != null)
+        'createdAt': user.createdAt!.toIso8601String(),
+      if (user.lastUpdated != null)
+        'lastUpdated': user.lastUpdated!.toIso8601String(),
+      if (user.bio != null) 'bio': user.bio,
       'address':
-          u.address != null
+          user.address != null
               ? {
-                'street': u.address!.street,
-                'city': u.address!.city,
-                'state': u.address!.state,
-                'country': u.address!.country,
+                'street': user.address!.street,
+                'city': user.address!.city,
+                'state': user.address!.state,
+                'country': user.address!.country,
               }
               : null,
       'preferences':
-          u.preferences != null
+          user.preferences != null
               ? {
-                'darkMode': u.preferences!.darkMode,
-                'language': u.preferences!.language,
+                'darkMode': user.preferences!.darkMode,
+                'language': user.preferences!.language,
               }
               : null,
     };

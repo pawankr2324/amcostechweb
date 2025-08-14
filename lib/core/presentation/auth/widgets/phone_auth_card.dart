@@ -19,7 +19,7 @@ class PhoneAuthCard extends StatelessWidget {
     // Center the card on larger screens; card has a max width for readability
     return Center(
       child: Card(
-        color: Colors.black.withAlpha(200),
+        color: Theme.of(context).colorScheme.surface,
         elevation: 6,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         // Constrain the width so it doesn't stretch too wide on web
@@ -51,6 +51,8 @@ class PhoneAuthCard extends StatelessWidget {
                   label: 'Phone Number',
                   prefixText: '+91 ',
                   keyboardType: TextInputType.phone,
+                  maxLength: 10,
+                  textInputAction: TextInputAction.done,
                 ),
 
                 const SizedBox(height: 24),
@@ -73,6 +75,7 @@ class PhoneAuthCard extends StatelessWidget {
                             );
                           } else {
                             // Optionally show a snackbar or error if empty
+
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text(

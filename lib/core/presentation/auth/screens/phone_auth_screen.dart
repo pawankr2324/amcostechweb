@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:amcostechweb/core/auth/widgets/phone_auth_card.dart';
+import 'package:amcostechweb/core/presentation/auth/widgets/phone_auth_card.dart';
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
 import 'package:authentication/authentication.dart';
 import 'package:amcostechweb/core/router/app_router.dart';

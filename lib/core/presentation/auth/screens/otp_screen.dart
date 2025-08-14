@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:authentication/authentication.dart';
-import 'package:amcostechweb/core/auth/widgets/otp_card.dart';
+import 'package:amcostechweb/core/presentation/auth/widgets/otp_card.dart';
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
 
 /// OTP verification screen. Expects a [verificationId] from GoRouter’s queryParams.

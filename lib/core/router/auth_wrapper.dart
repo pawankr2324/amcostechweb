@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:authentication/authentication.dart';
 import 'package:userdata/userdata.dart'; // ← userdata export
-import 'package:amcostechweb/core/pages/home_page.dart';
-import 'package:amcostechweb/core/auth/screens/phone_auth_screen.dart';
+import 'package:amcostechweb/core/presentation/home/home_page.dart';
+import 'package:amcostechweb/core/presentation/auth/screens/phone_auth_screen.dart';
 
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});

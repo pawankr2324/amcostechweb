@@ -1,8 +1,10 @@
+import 'package:amcostechweb/core/router/app_router.dart';
 import 'package:amcostechweb/core/utils/constants/assets_image.dart';
 import 'package:amcostechweb/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:authentication/authentication.dart';
+import 'package:go_router/go_router.dart';
 
 /// A card‐styled widget for OTP verification (entering OTP and submitting).
 /// Similar styling to PhoneAuthCard, with a fixed max width, padding,
@@ -21,7 +23,7 @@ class OTPCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: Colors.black.withAlpha(200),
+        color: Theme.of(context).colorScheme.surface,
         elevation: 6,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: ConstrainedBox(
@@ -46,11 +48,43 @@ class OTPCard extends StatelessWidget {
 
                 const SizedBox(height: 24),
 
+                Text(
+                  'We have sent the verification code to',
+                  style: Theme.of(context).textTheme.titleSmall,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Phone Number',
+                      style: Theme.of(context).textTheme.titleSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.go(AppRoutes.root);
+                      },
+                      child: Text(
+                        'Change Phone Number ?',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.titleSmall?.copyWith(color: Colors.red),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 24),
                 // OTP input field
                 CustomTextField(
                   controller: smsController,
                   label: 'OTP',
                   keyboardType: TextInputType.number,
+                  maxLength: 6,
                 ),
 
                 const SizedBox(height: 24),

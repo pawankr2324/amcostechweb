@@ -50,9 +50,6 @@ class UserProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.colors.primary,
-              ),
               onPressed: () {
                 context.read<UserCubit>().signOut();
                 Navigator.pushReplacementNamed(context, '/');
