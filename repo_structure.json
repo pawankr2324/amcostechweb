@@ -1,8 +1,5 @@
 [
   {"type":"directory","name":"lib/","contents":[
-    {"type":"directory","name":"authUI","contents":[
-      {"type":"file","name":"auth_screen.dart"}
-    ]},
     {"type":"directory","name":"core","contents":[
       {"type":"file","name":"my_app.dart"},
       {"type":"directory","name":"pages","contents":[
@@ -76,29 +73,6 @@
     {"type":"file","name":"main.dart"}
   ]},
   {"type":"directory","name":"packages/","contents":[
-    {"type":"directory","name":"authenticate","contents":[
-      {"type":"directory","name":"lib","contents":[
-        {"type":"file","name":"authenticate.dart"},
-        {"type":"directory","name":"src","contents":[
-          {"type":"directory","name":"application","contents":[
-            {"type":"directory","name":"bloc","contents":[
-              {"type":"file","name":"auth_bloc.dart"},
-              {"type":"file","name":"auth_event.dart"},
-              {"type":"file","name":"auth_state.dart"}
-            ]}
-          ]},
-          {"type":"directory","name":"data","contents":[
-            {"type":"file","name":"firebase_auth_repository.dart"}
-          ]},
-          {"type":"directory","name":"domain","contents":[
-            {"type":"directory","name":"repositories","contents":[
-              {"type":"file","name":"auth_repository.dart"}
-            ]}
-          ]}
-        ]}
-      ]},
-      {"type":"file","name":"pubspec.yaml"}
-    ]},
     {"type":"directory","name":"authentication","contents":[
       {"type":"file","name":".gitignore"},
       {"type":"file","name":".metadata"},
