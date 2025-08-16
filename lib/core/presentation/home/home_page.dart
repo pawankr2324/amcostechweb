@@ -1,12 +1,12 @@
 // File: lib/core/pages/home_page.dart
 
 import 'package:amcostechweb/core/utils/responsive/responsive_layout.dart';
+import 'package:amcostechweb/core/widgets/app_navbar.dart';
 import 'package:amcostechweb/core/widgets/sideNavbar/side_navbar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:amcostechweb/core/utils/theme/app_text_styles.dart';
-import 'package:amcostechweb/core/widgets/app_navbar.dart';
 
 import 'package:userdata/userdata.dart';
 
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //  appBar: AppNavbar(),
+      appBar: AppNavbar(),
       body: ResponsiveLayout(
         mobile: _buildMobileBody(context),
         tablet: _buildTabletBody(context),

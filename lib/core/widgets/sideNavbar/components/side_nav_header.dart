@@ -145,7 +145,7 @@ class _BorderNubToggle extends StatelessWidget {
               boxShadow: [
                 // subtle lift so it feels like a handle on the edge
                 BoxShadow(
-                  color: scheme.shadow.withOpacity(0.1),
+                  color: scheme.shadow.withAlpha(26),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
